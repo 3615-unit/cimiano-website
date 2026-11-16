@@ -127,37 +127,104 @@ p:last-child { margin-bottom: 0; }
 .on-dark .burger, .on-dark .logo { color: #fff; }
 .on-light .burger { color: var(--lime); }
 
+/* Side panel menu: slides in from the right over a dimmed page. */
 .menu {
   position: fixed; inset: 0;
-  background: var(--green);
-  color: #fff;
   z-index: 50;
+  visibility: hidden;
+  transition: visibility 0s linear 0.45s;
+}
+.menu.open { visibility: visible; transition-delay: 0s; }
+
+.menu-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(25, 18, 9, 0.35);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  cursor: pointer;
+}
+.menu.open .menu-backdrop { opacity: 1; }
+
+.menu-panel {
+  position: absolute;
+  top: var(--gutter); right: var(--gutter); bottom: var(--gutter);
+  width: min(400px, calc(100vw - 2 * var(--gutter)));
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(25, 18, 9, 0.18);
   display: flex;
   flex-direction: column;
-  padding: 32px clamp(24px, 6vw, 80px);
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.25s, visibility 0.25s;
+  padding: 28px 32px 32px;
+  overflow-y: auto;
+  transform: translateX(calc(100% + 2 * var(--gutter)));
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.menu.open { opacity: 1; visibility: visible; }
+.menu.open .menu-panel { transform: none; }
+
 .menu-top { display: flex; justify-content: space-between; align-items: center; }
+.menu-top .logo img { height: 38px; }
 .menu-close {
-  width: 44px; height: 44px; border: 0; background: none; color: #fff;
-  font-size: 2.4rem; line-height: 1; cursor: pointer; font-weight: 200;
+  width: 44px; height: 44px; margin-right: -10px;
+  border: 0; border-radius: 50%; background: none; color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+  transition: background 0.2s, transform 0.3s;
 }
-.menu nav { margin: auto 0; }
-.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu-close svg { width: 22px; height: 22px; }
+.menu-close:hover { background: var(--bg); transform: rotate(90deg); }
+
+.menu nav { margin: 40px 0 32px; }
+.menu ul { list-style: none; margin: 0; padding: 0; counter-reset: menu; }
+.menu li {
+  counter-increment: menu;
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.menu li:last-child { border-bottom: 1px solid var(--line); }
+.menu.open li { opacity: 1; transform: none; }
+.menu.open li:nth-child(1) { transition-delay: 0.10s; }
+.menu.open li:nth-child(2) { transition-delay: 0.14s; }
+.menu.open li:nth-child(3) { transition-delay: 0.18s; }
+.menu.open li:nth-child(4) { transition-delay: 0.22s; }
+.menu.open li:nth-child(5) { transition-delay: 0.26s; }
+.menu.open li:nth-child(6) { transition-delay: 0.30s; }
+.menu.open li:nth-child(7) { transition-delay: 0.34s; }
 .menu li a {
-  display: block;
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 13px 0;
+  font-size: 1.3rem;
   font-weight: 300;
   text-decoration: none;
-  padding: 6px 0;
-  opacity: 0.85;
+  transition: color 0.2s, padding-left 0.25s ease;
 }
-.menu li a:hover, .menu li a[aria-current="page"] { opacity: 1; color: var(--lime); }
-.menu-foot { font-size: 0.95rem; opacity: 0.85; }
-.menu-foot a { text-decoration: none; }
+.menu li a::before {
+  content: counter(menu, decimal-leading-zero);
+  font-size: 0.75rem;
+  color: var(--muted);
+  min-width: 1.6em;
+}
+.menu li a:hover { color: var(--lime-dark); padding-left: 6px; }
+.menu li a[aria-current="page"] { color: var(--lime-dark); }
+.menu li a[aria-current="page"]::after {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--lime); margin-left: auto; align-self: center;
+}
+
+.menu-foot { margin-top: auto; display: grid; gap: 6px; font-size: 0.95rem; color: var(--muted); }
+.menu-foot .btn { justify-self: start; margin-bottom: 14px; }
+.menu-foot a:not(.btn) { text-decoration: none; }
+.menu-foot a:not(.btn):hover { color: var(--ink); }
 body.menu-open { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel, .menu li, .menu-backdrop { transition: none; }
+}
 
 /* ---------- Home hero ---------- */
 

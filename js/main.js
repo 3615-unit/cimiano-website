@@ -4,7 +4,7 @@ document.documentElement.classList.add("js");
 // Menu open and close.
 const menu = document.getElementById("menu");
 const openBtn = document.querySelector("[data-menu-open]");
-const closeBtn = document.querySelector("[data-menu-close]");
+const closeBtn = document.querySelector(".menu-close");
 
 function setMenu(open) {
   if (!menu) return;
@@ -16,9 +16,21 @@ function setMenu(open) {
   else openBtn && openBtn.focus();
 }
 openBtn && openBtn.addEventListener("click", () => setMenu(true));
-closeBtn && closeBtn.addEventListener("click", () => setMenu(false));
+// The close button and the dimmed backdrop both close the menu.
+document.querySelectorAll("[data-menu-close]").forEach((el) =>
+  el.addEventListener("click", () => setMenu(false))
+);
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && menu && menu.classList.contains("open")) setMenu(false);
+  if (!menu || !menu.classList.contains("open")) return;
+  if (e.key === "Escape") setMenu(false);
+  // Keep Tab inside the panel while it is open.
+  if (e.key === "Tab") {
+    const items = menu.querySelectorAll(".menu-panel a, .menu-panel button");
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
 // Fade sections in as they scroll into view.
