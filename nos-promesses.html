@@ -3,18 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nos promesses | Cimiano</title>
-<meta name="description" content="Qualité, respect des délais, transparence, chantier propre, conseils sur mesure et garantie décennale : les engagements Cimiano.">
+<title>Rénovation à Paris avec garantie décennale | Cimiano</title>
+<meta name="description" content="Qualité des finitions, respect des délais, chantier propre et garantie décennale : les engagements de Cimiano pour vos travaux à Paris.">
 <link rel="canonical" href="https://www.cimiano.fr/nos-promesses">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Cimiano">
-<meta property="og:title" content="Nos promesses | Cimiano">
-<meta property="og:description" content="Qualité, respect des délais, transparence, chantier propre, conseils sur mesure et garantie décennale : les engagements Cimiano.">
+<meta property="og:title" content="Rénovation à Paris avec garantie décennale | Cimiano">
+<meta property="og:description" content="Qualité des finitions, respect des délais, chantier propre et garantie décennale : les engagements de Cimiano pour vos travaux à Paris.">
 <meta property="og:url" content="https://www.cimiano.fr/nos-promesses">
-<meta property="og:image" content="https://www.cimiano.fr/img/hero.webp">
+<meta property="og:image" content="https://www.cimiano.fr/img/og-cimiano.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f4efe8">
 <link rel="icon" href="img/favicon.webp" type="image/webp">
+<link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,7 +27,7 @@
 <div class="mini-bar" aria-hidden="true">
   <a class="logo" href="./" tabindex="-1"><img src="img/logo-dark.svg" alt="Cimiano" width="114" height="30"></a>
   <div class="header-actions">
-    <a class="btn" href="contact" tabindex="-1">Devis gratuit</a>
+    <a data-umami-event="Clic devis" class="btn" href="contact" tabindex="-1">Devis gratuit</a>
     <button class="menu-pill" type="button" data-mini-menu tabindex="-1"><span>Menu</span><i></i></button>
   </div>
 </div>
@@ -31,7 +36,7 @@
     <header class="site-header on-light">
   <a class="logo" href="./" aria-label="Cimiano, accueil"><img src="img/logo-dark.svg" alt="Cimiano, entreprise familiale" width="174" height="46"></a>
   <div class="header-actions">
-    <a class="btn" href="contact">Devis gratuit</a>
+    <a data-umami-event="Clic devis" class="btn" href="contact">Devis gratuit</a>
     <button class="menu-pill" type="button" data-menu-open aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu"><span>Menu</span><i></i></button>
   </div>
 </header>
@@ -60,8 +65,8 @@
       <p>Parlez-nous de votre projet. Le devis est gratuit.</p>
     </div>
     <div class="cta-actions">
-      <a class="tel" href="tel:+33628564787">06 28 56 47 87</a>
-      <a class="btn-arrow" href="contact">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a data-umami-event="Appel téléphone" class="tel" href="tel:+33628564787">06 28 56 47 87</a>
+      <a data-umami-event="Clic devis" class="btn-arrow" href="contact">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
   </section>
   <footer class="card site-footer">
@@ -78,8 +83,8 @@
     </div>
     <div class="foot-col">
       <span class="foot-label">Contact</span>
-      <a href="tel:+33628564787">06 28 56 47 87</a>
-      <a href="mailto:paul@cimiano.fr">paul@cimiano.fr</a>
+      <a data-umami-event="Appel téléphone" href="tel:+33628564787">06 28 56 47 87</a>
+      <a data-umami-event="Clic email" href="mailto:paul@cimiano.fr">paul@cimiano.fr</a>
     </div>
     <div class="foot-bottom">
       <span>© <span data-year>2026</span> Cimiano</span>
@@ -102,11 +107,11 @@
         <li><a href="savoir-faire">Notre savoir-faire</a></li>
         <li><a href="nos-promesses" aria-current="page">Nos promesses</a></li>
         <li><a href="certifications">Nos certifications</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li><a data-umami-event="Clic devis" href="contact">Contact</a></li>
       </ul>
     </nav>
     <div class="menu-foot">
-      <a class="btn btn-lg" href="contact">Demander un devis</a>
+      <a data-umami-event="Clic devis" class="btn btn-lg" href="contact">Demander un devis</a>
     </div>
   </div>
 </div>

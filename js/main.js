@@ -94,6 +94,15 @@ if (form) {
   });
 }
 
+// Analytics: count plays of the M6 clip (Umami, cookie-free). Does nothing
+// if Umami is not loaded.
+const tvVideo = document.querySelector("video.tv-media");
+if (tvVideo) {
+  tvVideo.addEventListener("play", () => {
+    if (window.umami) window.umami.track("Lecture vidéo M6");
+  }, { once: true });
+}
+
 // Keep the footer year current.
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
