@@ -218,18 +218,7 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- TV block ---------- */
 
-.tv-media { position: relative; display: block; border-radius: 14px; overflow: hidden; }
-.tv-media img { max-height: none; }
-.tv-media .play {
-  position: absolute; left: 50%; top: 50%;
-  width: 76px; height: 76px; margin: -38px 0 0 -38px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  display: grid; place-items: center;
-  transition: transform 0.2s;
-}
-.tv-media:hover .play { transform: scale(1.08); }
-.tv-media .play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--ink); }
+.tv-media { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; object-fit: cover; }
 .split img.m6 { width: 64px; height: auto; border-radius: 0; margin-bottom: 24px; }
 
 /* ---------- Sectors banner + sticky stack (home) ---------- */

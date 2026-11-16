@@ -47,11 +47,10 @@
   </section>
 
   <section class="card split reveal">
-    <a class="tv-media" href="https://youtu.be/ajGMBSCbY4g?t=1432" target="_blank" rel="noopener">
-      <img src="img/m6-emission.webp" alt="Paul Cimiano dans l’émission Proprio à tout prix sur M6" loading="lazy" width="1400" height="778">
-      <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
-      <span class="skip">Voir l’extrait sur YouTube</span>
-    </a>
+    <!-- preload="none": the 18 MB clip only downloads when the visitor presses play. -->
+    <video class="tv-media" controls playsinline preload="none" poster="img/m6-emission.webp" width="1280" height="720" aria-label="Paul Cimiano dans l’émission Proprio à tout prix – L’Hebdo">
+      <source src="video/cimiano-m6.mp4" type="video/mp4">
+    </video>
     <div>
       <img class="m6" src="img/m6-logo.webp" alt="M6" width="64" height="49" loading="lazy">
       <h2>Notre savoir-faire à la télévision</h2>
