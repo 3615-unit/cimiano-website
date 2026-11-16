@@ -794,3 +794,40 @@ label { font-size: 0.875rem; }
 
 /* Required-field marker on the contact form. */
 .req { color: var(--lime-dark); font-weight: 500; }
+
+/* ---------- Trade pages ---------- */
+
+/* Small link above the page title, back to the parent page. */
+.eyebrow-link { text-decoration: none; }
+.eyebrow-link:hover { color: var(--ink); }
+
+/* List with fine green checkmarks. */
+.ticks { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+.ticks li { position: relative; padding-left: 28px; font-size: var(--fs-small); }
+.ticks li::before {
+  content: ""; position: absolute; left: 2px; top: 0.45em;
+  width: 12px; height: 7px;
+  border-left: 1.5px solid var(--lime-dark); border-bottom: 1.5px solid var(--lime-dark);
+  transform: rotate(-45deg);
+}
+
+/* Questions that open and close. */
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 20px 0;
+  font-family: var(--serif); font-size: var(--fs-h3); line-height: 1.2;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; font-family: var(--font); font-size: 1.4rem; font-weight: 300; color: var(--muted);
+  transition: transform 0.3s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); font-size: var(--fs-small); max-width: 46em; padding-bottom: 22px; margin: 0; }
+
+/* Link from a trade card to its dedicated page. */
+.trade-link { display: inline-block; margin-top: 10px; font-size: var(--fs-label); font-weight: 500; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--lime); padding-bottom: 2px; }
+.trade-link:hover { color: var(--green); }
