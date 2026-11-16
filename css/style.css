@@ -517,7 +517,18 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   padding: 11px 20px; background: var(--lime); color: var(--ink);
 }
 .btn:hover { background: #b6dd16; }
-.btn-icon { display: none; } /* shown on phones only, see below */
+/* Header quote button: an outline in the same spirit as the Menu pill,
+   "Devis gratuit" followed by a small pen. Phones shrink it to a circle. */
+.header-actions .btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: 40px; padding: 0 16px 0 18px;
+  background: none; color: var(--lime); border: 1.5px solid var(--lime);
+}
+.header-actions .btn:hover { background: rgba(163, 204, 0, 0.12); }
+/* On light backgrounds lime text is too faint: deeper green text, lime ring. */
+@media (min-width: 761px) { .on-light .header-actions .btn, .mini-bar .header-actions .btn { color: #5f7a00; } }
+.btn-icon { display: none; }
+.header-actions .btn-icon { display: block; width: 16px; height: 16px; stroke-width: 2; }
 .btn-arrow {
   display: inline-flex; align-items: center; gap: 14px;
   padding: 14px 24px;
