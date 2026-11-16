@@ -524,7 +524,6 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   height: 40px; padding: 0 16px 0 18px;
   background: none; color: var(--lime); border: 1.5px solid var(--lime);
 }
-.header-actions .btn:hover { background: rgba(163, 204, 0, 0.12); }
 /* On light backgrounds lime text is too faint: deeper green text, lime ring. */
 @media (min-width: 761px) { .on-light .header-actions .btn, .mini-bar .header-actions .btn { color: #5f7a00; } }
 .btn-icon { display: none; }
@@ -563,11 +562,17 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .menu-pill i::before, .menu-pill i::after { content: ""; width: 16px; height: 1px; background: currentColor; }
 .on-dark .menu-pill { color: #fff; border-color: rgba(255,255,255,.6); }
 .on-light .menu-pill { color: var(--ink); border-color: var(--line); }
-/* Hover: a faint tint, like the quote button. White on the dark photo,
-   a light ink tint on light backgrounds where white would not show. */
-.menu-pill, .header-actions .btn { transition: background 0.25s ease; }
-.menu-pill:hover { background: rgba(255, 255, 255, 0.12); }
-.on-light .menu-pill:hover, .mini-bar .menu-pill:hover { background: rgba(29, 28, 26, 0.05); }
+/* Hover: the outline fills in, like "En savoir plus". Quote button fills
+   lime; Menu fills white on the dark photo, ink on light backgrounds.
+   Only on devices with a real mouse, so a tap on a phone does not stick. */
+.menu-pill, .header-actions .btn { transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease; }
+@media (hover: hover) {
+  .header-actions .btn:hover,
+  .on-light .header-actions .btn:hover,
+  .mini-bar .header-actions .btn:hover { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+  .menu-pill:hover { background: #fff; color: var(--ink); border-color: #fff; }
+  .on-light .menu-pill:hover, .mini-bar .menu-pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+}
 
 /* Compact bar that appears once the hero has scrolled away. */
 .mini-bar {
@@ -673,7 +678,6 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   /* Outlined like the menu circle, a touch stronger: thicker green ring,
      slightly bolder pen, no fill. */
   .header-actions .btn { display: inline-flex; align-items: center; background: none; color: var(--lime); border: 1.5px solid var(--lime); }
-  .header-actions .btn:hover { background: none; }
   .header-actions .btn-text { display: none; }
   .header-actions .btn-icon { display: block; width: 20px; height: 20px; stroke-width: 2; }
   .menu-pill span { display: none; }
