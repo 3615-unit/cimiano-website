@@ -572,7 +572,13 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   .mini-bar .header-actions .btn:hover { background: var(--lime); color: var(--ink); border-color: var(--lime); }
   .menu-pill:hover { background: #fff; color: var(--ink); border-color: #fff; }
   .on-light .menu-pill:hover, .mini-bar .menu-pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+  /* Small motion, like the arrow of "En savoir plus": the pen tilts as if
+     writing, the two menu bars draw apart. */
+  .header-actions .btn:hover .btn-icon { transform: rotate(-14deg) translate(-1px, -1px); }
+  .menu-pill:hover i::before { transform: translateY(-2px); }
+  .menu-pill:hover i::after { transform: translateY(2px); }
 }
+.header-actions .btn-icon, .menu-pill i::before, .menu-pill i::after { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
 
 /* Compact bar that appears once the hero has scrolled away. */
 .mini-bar {
