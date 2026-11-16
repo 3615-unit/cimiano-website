@@ -563,6 +563,11 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .menu-pill i::before, .menu-pill i::after { content: ""; width: 16px; height: 1px; background: currentColor; }
 .on-dark .menu-pill { color: #fff; border-color: rgba(255,255,255,.6); }
 .on-light .menu-pill { color: var(--ink); border-color: var(--line); }
+/* Hover: a faint tint, like the quote button. White on the dark photo,
+   a light ink tint on light backgrounds where white would not show. */
+.menu-pill, .header-actions .btn { transition: background 0.25s ease; }
+.menu-pill:hover { background: rgba(255, 255, 255, 0.12); }
+.on-light .menu-pill:hover, .mini-bar .menu-pill:hover { background: rgba(29, 28, 26, 0.05); }
 
 /* Compact bar that appears once the hero has scrolled away. */
 .mini-bar {
