@@ -96,8 +96,8 @@ p:last-child { margin-bottom: 0; }
   object-position: center 30%;
   border-radius: 14px;
 }
-/* Heading with a logo on its right (M6 card). The logo grows with the screen. */
-.title-logo { display: flex; align-items: center; justify-content: space-between; gap: clamp(16px, 3vw, 32px); margin-bottom: 20px; }
+/* Heading with a logo on its left (M6 card). The logo grows with the screen. */
+.title-logo { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 28px); margin-bottom: 20px; }
 .split .title-logo h2 { margin-bottom: 0; }
 .title-logo img { flex: none; width: clamp(64px, 8vw, 104px); height: auto; }
 
