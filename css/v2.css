@@ -144,12 +144,15 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 
 /* ---------- CTA + footer ---------- */
 
-/* Quote box: warm sand, dark text, the brand's deep green on the italic word. */
-.cta { background: #e8dfd1; color: var(--ink); border-color: transparent; padding-block: clamp(40px, 6vw, 80px); }
+/* Quote box: deep sage green with cream text so it stands out on the tan page.
+   The italic word picks up a soft version of the logo's lime. */
+.cta { background: var(--green); color: var(--cream); border-color: transparent; padding-block: clamp(40px, 6vw, 80px); }
 .cta h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
-.cta h2 em { color: var(--green); }
-.cta p { color: var(--muted); }
-.cta .tel { color: var(--ink); font-weight: 500; letter-spacing: 0.02em; }
+.cta h2 em { color: #cfe27a; }
+.cta p { color: rgba(244, 239, 232, 0.75); }
+.cta .tel { color: var(--cream); font-weight: 500; letter-spacing: 0.02em; }
+.cta .btn-arrow { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+.cta .btn-arrow:hover { background: transparent; color: var(--cream); border-color: var(--cream); }
 .site-footer { font-size: 0.9rem; }
 
 /* Reveal: fade, rise and un-blur. */
