@@ -1,0 +1,4 @@
+# Private source files: invoices, quotes, raw photos, video. Never publish.
+Images and Logos/
+.DS_Store
+.claude/
