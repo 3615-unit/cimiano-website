@@ -639,8 +639,10 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 @media (max-width: 760px) {
   /* Phones: the text sits lower over the photo, so darken top to bottom. */
   .cta::after { background: linear-gradient(180deg, rgba(20,16,10,.8), rgba(20,16,10,.65)); }
-  /* Button and phone number centred across the whole box. */
-  .cta .cta-actions { width: 100%; }
+  /* Phones: button, phone number and "En savoir plus" sit on the left,
+     in line with the text above them. */
+  .cta .cta-actions { align-items: flex-start; }
+  .center { text-align: left; }
 }
 
 /* Reveal: fade, rise and un-blur. */
