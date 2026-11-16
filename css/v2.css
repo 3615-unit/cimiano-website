@@ -144,10 +144,12 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 
 /* ---------- CTA + footer ---------- */
 
-.cta { background: var(--lime); color: var(--ink); padding-block: clamp(40px, 6vw, 80px); }
+/* Quote box: warm sand, dark text, the brand's deep green on the italic word. */
+.cta { background: #e8dfd1; color: var(--ink); border-color: transparent; padding-block: clamp(40px, 6vw, 80px); }
 .cta h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
-.cta p { color: rgba(29, 28, 26, 0.7); }
-.cta .tel { color: var(--ink); font-weight: 500; }
+.cta h2 em { color: var(--green); }
+.cta p { color: var(--muted); }
+.cta .tel { color: var(--ink); font-weight: 500; letter-spacing: 0.02em; }
 .site-footer { font-size: 0.9rem; }
 
 /* Reveal: fade, rise and un-blur. */
