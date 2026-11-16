@@ -176,9 +176,8 @@ p:last-child { margin-bottom: 0; }
 .menu-close:hover { background: var(--bg); transform: rotate(90deg); }
 
 .menu nav { margin: 40px 0 32px; }
-.menu ul { list-style: none; margin: 0; padding: 0; counter-reset: menu; }
+.menu ul { list-style: none; margin: 0; padding: 0; }
 .menu li {
-  counter-increment: menu;
   border-top: 1px solid var(--line);
   opacity: 0;
   transform: translateX(16px);
@@ -203,12 +202,6 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
   transition: color 0.2s, padding-left 0.25s ease;
 }
-.menu li a::before {
-  content: counter(menu, decimal-leading-zero);
-  font-size: 0.75rem;
-  color: var(--muted);
-  min-width: 1.6em;
-}
 .menu li a:hover { color: var(--lime-dark); padding-left: 6px; }
 .menu li a[aria-current="page"] { color: var(--lime-dark); }
 .menu li a[aria-current="page"]::after {
@@ -216,10 +209,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--lime); margin-left: auto; align-self: center;
 }
 
-.menu-foot { margin-top: auto; display: grid; gap: 6px; font-size: 0.95rem; color: var(--muted); }
-.menu-foot .btn { justify-self: start; margin-bottom: 14px; }
-.menu-foot a:not(.btn) { text-decoration: none; }
-.menu-foot a:not(.btn):hover { color: var(--ink); }
+.menu-foot { margin-top: auto; }
 body.menu-open { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
