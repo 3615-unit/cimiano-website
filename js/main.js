@@ -79,11 +79,10 @@ if (form) {
     e.preventDefault();
     if (!form.reportValidity()) return;
     const v = (name) => (form.elements[name].value || "").trim();
-    const subject = `Demande de devis - ${v("prenom")} ${v("nom")}`;
+    // No e-mail field: the visitor's own mail app sends it, so we get their address anyway.
+    const subject = `Demande de devis - ${v("nom")}`;
     const body = [
-      `Prénom : ${v("prenom")}`,
       `Nom : ${v("nom")}`,
-      `Email : ${v("email")}`,
       `Téléphone : ${v("telephone")}`,
       `Adresse du chantier : ${v("adresse")}`,
       "",
