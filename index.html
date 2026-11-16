@@ -46,16 +46,18 @@
     <img src="img/famille.webp" alt="Trois générations de la famille Cimiano" loading="lazy" width="1200" height="1076">
   </section>
 
-  <section class="card split reveal">
+  <!-- Text comes first in the code so phones show it before the video.
+       split-flip puts the video on the left on wide screens. -->
+  <section class="card split split-flip reveal">
+    <div>
+      <span class="eyebrow eyebrow-logo"><img src="img/m6-logo.webp" alt="" width="28" height="22" loading="lazy">Vu sur M6</span>
+      <h2>Notre savoir-faire à la télévision</h2>
+      <p class="muted">Retrouvez Paul Cimiano dans l’émission <em>Proprio à tout prix – L’Hebdo</em> sur M6, où il présente son approche exigeante de la rénovation des petits espaces parisiens.</p>
+    </div>
     <!-- preload="none": the 18 MB clip only downloads when the visitor presses play. -->
     <video class="tv-media" controls playsinline preload="none" poster="img/m6-emission.webp" width="1280" height="720" aria-label="Paul Cimiano dans l’émission Proprio à tout prix – L’Hebdo">
       <source src="video/cimiano-m6.mp4" type="video/mp4">
     </video>
-    <div>
-      <img class="m6" src="img/m6-logo.webp" alt="M6" width="64" height="49" loading="lazy">
-      <h2>Notre savoir-faire à la télévision</h2>
-      <p class="muted">Retrouvez Paul Cimiano dans l’émission <em>Proprio à tout prix – L’Hebdo</em> sur M6, où il présente son approche exigeante de la rénovation des petits espaces parisiens.</p>
-    </div>
   </section>
 
   <section class="banner reveal">

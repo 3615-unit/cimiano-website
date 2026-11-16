@@ -78,14 +78,34 @@ p:last-child { margin-bottom: 0; }
 .lead { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.5; max-width: 34em; }
 .muted { color: var(--muted); }
 
+/* Text + media cards. Stacked (text first, media below) until the screen is
+   wide enough for two comfortable columns, then side by side. */
 .split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(28px, 5vw, 64px);
+  grid-template-columns: 1fr;
+  gap: 32px;
   align-items: center;
 }
-.split h2 { margin-bottom: 28px; }
-.split img { width: 100%; height: 100%; max-height: 520px; object-fit: cover; border-radius: 14px; }
+.split h2 { margin-bottom: 20px; }
+.split p:has(.btn) { margin-top: 28px; }
+.split > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 14px;
+}
+.eyebrow-logo { display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow-logo img { width: 28px; height: auto; }
+
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 1fr 1.15fr; gap: clamp(48px, 5vw, 72px); }
+  .split > img { aspect-ratio: 5 / 4; }
+  /* Media on the left, text on the right. */
+  .split-flip { grid-template-columns: 1.15fr 1fr; }
+  .split-flip > :first-child { order: 2; }
+}
 
 /* ---------- Header and menu ---------- */
 
@@ -276,8 +296,6 @@ body.menu-open { overflow: hidden; }
 /* ---------- TV block ---------- */
 
 .tv-media { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; object-fit: cover; }
-.split img.m6 { width: 64px; height: auto; border-radius: 0; margin-bottom: 24px; }
-
 /* ---------- Sectors banner + sticky stack (home) ---------- */
 
 .banner {
@@ -441,8 +459,7 @@ textarea { min-height: 160px; resize: vertical; }
 @media (max-width: 760px) {
   :root { --gutter: 16px; --radius: 16px; }
   body { font-size: 16px; }
-  .split, .contact-grid, .stack-item, .promises { grid-template-columns: 1fr; }
-  .split img { max-height: 380px; }
+  .contact-grid, .stack-item, .promises { grid-template-columns: 1fr; }
   .stack-item { position: static; min-height: 0; }
   .rows li { grid-template-columns: 1fr; gap: 6px; }
   .grid, .grid-2 { grid-template-columns: 1fr; }
