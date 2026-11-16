@@ -786,3 +786,8 @@ label { font-size: 0.875rem; }
   .foot-col > a { padding: 3px 0; }
   .foot-bottom { font-size: 0.75rem; padding-top: 14px; }
 }
+
+/* Home hero on phones: show the right side of the kitchen photo. */
+@media (max-width: 760px) {
+  .hero > img { object-position: right center; }
+}
