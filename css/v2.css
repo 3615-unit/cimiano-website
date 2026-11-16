@@ -41,29 +41,33 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .split:hover > img, .stack-item:hover img { transform: scale(1.025); }
 .tv-media { border-radius: 20px; }
 
-/* ---------- Buttons: pill with an arrow that slides on hover ---------- */
+/* ---------- Buttons: quiet and refined ----------
+   Thin outline, small spaced capitals, a fine arrow that drifts on hover.
+   On hover the outline fills in. */
 
 .btn {
-  font-weight: 500; font-size: 0.92rem;
-  padding: 10px 20px; background: var(--lime); color: var(--ink);
+  font-weight: 500; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 11px 20px; background: var(--lime); color: var(--ink);
 }
 .btn:hover { background: #b6dd16; }
 .btn-arrow {
-  display: inline-flex; align-items: center; gap: 12px;
-  padding: 8px 8px 8px 22px;
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 14px 24px;
   border-radius: 999px;
-  background: var(--ink); color: #fff;
-  font-weight: 500; font-size: 0.92rem; text-decoration: none;
-  transition: background 0.25s;
+  border: 1px solid currentColor;
+  background: transparent; color: var(--ink);
+  font-weight: 500; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
-.btn-arrow .arr {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--lime); color: var(--ink);
-  display: grid; place-items: center; overflow: hidden;
-}
-.btn-arrow .arr svg { width: 16px; height: 16px; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
-.btn-arrow:hover .arr svg { transform: translateX(3px); }
-.btn-arrow.light { background: #fff; color: var(--ink); }
+.btn-arrow .arr { display: inline-grid; place-items: center; }
+.btn-arrow .arr svg { width: 18px; height: 18px; stroke-width: 1.2; transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.btn-arrow:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-arrow:hover .arr svg { transform: translateX(4px); }
+.btn-arrow[href^="#"]:hover .arr svg { transform: translateY(3px); }
+.btn-arrow.light { color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+.btn-arrow.light:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.dark .btn-arrow.light { border-color: rgba(244, 239, 232, 0.5); }
 .split p:has(.btn-arrow) { margin-top: 32px; }
 
 /* ---------- Header ---------- */
@@ -73,11 +77,12 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   display: inline-flex; align-items: center; gap: 10px;
   height: 40px; padding: 0 16px 0 18px;
   border-radius: 999px; border: 1px solid currentColor;
-  background: none; color: inherit; font: inherit; font-weight: 500; font-size: 0.9rem; cursor: pointer;
+  background: none; color: inherit; font: inherit; cursor: pointer;
+  font-weight: 500; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
 }
 .menu-pill i { display: grid; gap: 4px; }
-.menu-pill i::before, .menu-pill i::after { content: ""; width: 16px; height: 1.5px; background: currentColor; border-radius: 2px; }
-.on-dark .menu-pill { color: #fff; border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.08); backdrop-filter: blur(8px); }
+.menu-pill i::before, .menu-pill i::after { content: ""; width: 16px; height: 1px; background: currentColor; }
+.on-dark .menu-pill { color: #fff; border-color: rgba(255,255,255,.6); }
 .on-light .menu-pill { color: var(--ink); border-color: var(--line); }
 
 /* Compact bar that appears once the hero has scrolled away. */
@@ -105,15 +110,6 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .hero-body { display: grid; gap: 32px; }
 .hero h1 { max-width: 13em; margin: 0; }
 .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-.stats { display: flex; gap: 10px; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
-.stats li {
-  padding: 12px 18px; border-radius: 18px;
-  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  line-height: 1.2;
-}
-.stats b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.9rem; }
-.stats span { font-size: 0.78rem; opacity: 0.85; }
 
 /* ---------- TV card ---------- */
 
@@ -159,10 +155,6 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   .header-actions .btn { display: none; }
   .menu-pill span { display: none; }
   .menu-pill { padding: 0 12px; }
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 8px; }
-  .stats li { padding: 10px 12px; border-radius: 14px; }
-  .stats b { font-size: 1.4rem; }
-  .stats span { font-size: 0.7rem; }
   .dark .rows li { grid-template-columns: 1fr; }
   .rows .go { display: none; }
   .stack-item .num { padding-bottom: 16px; }
