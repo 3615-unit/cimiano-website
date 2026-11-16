@@ -58,13 +58,13 @@ if (miniBar && topSection && "IntersectionObserver" in window) {
 // Fade sections in as they scroll into view.
 const revealed = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
-  // Start once the block's top has climbed above the bottom fifth of the
-  // screen, so the soft blur-in is actually seen while scrolling down.
+  // Start as soon as the block is just inside the screen: early enough for
+  // fast scrolling, late enough that the soft blur-in is still seen.
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add("in");
     });
-  }, { rootMargin: "0px 0px -20% 0px" });
+  }, { rootMargin: "0px 0px -6% 0px" });
   // Once a block is fully back below the screen (the visitor scrolled up past
   // it), reset it, so it plays again on the next scroll down. Blocks above
   // the screen stay visible.
