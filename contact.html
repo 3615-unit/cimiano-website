@@ -20,7 +20,7 @@
 <link rel="icon" href="img/favicon.webp" type="image/webp">
 <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=202611152243">
+<link rel="stylesheet" href="css/style.css?v=202611152245">
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -48,11 +48,11 @@
 
   <section class="card contact-form reveal">
     <form id="contact-form" data-to="paul@cimiano.fr" action="mailto:paul@cimiano.fr" method="post" enctype="text/plain">
-      <div class="field"><label for="nom">Prénom et nom</label><input id="nom" name="nom" autocomplete="name" required></div>
+      <div class="field"><label for="nom">Prénom et nom <span class="req" aria-hidden="true">*</span></label><input id="nom" name="nom" autocomplete="name" required></div>
       <div class="field"><label for="telephone">Téléphone</label><input id="telephone" name="telephone" type="tel" autocomplete="tel"></div>
       <div class="field full"><label for="adresse">Adresse du chantier</label><input id="adresse" name="adresse" autocomplete="street-address"></div>
-      <div class="field full"><label for="message">Votre projet</label><textarea id="message" name="message" required placeholder="Type de travaux, surface, délais souhaités…"></textarea></div>
-      <p class="form-note">En cliquant sur « Envoyer », votre messagerie s’ouvre avec votre demande déjà rédigée. Il ne reste qu’à l’envoyer.</p>
+      <div class="field full"><label for="message">Votre projet <span class="req" aria-hidden="true">*</span></label><textarea id="message" name="message" required placeholder="Type de travaux, surface, délais souhaités…"></textarea></div>
+      <p class="form-note"><span class="req" aria-hidden="true">*</span> Champs obligatoires. En cliquant sur « Envoyer », votre messagerie s’ouvre avec votre demande déjà rédigée. Il ne reste qu’à l’envoyer.</p>
       <div><button class="btn-arrow" type="submit" data-umami-event="Envoi formulaire devis">Envoyer<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
     </form>
   </section>
@@ -103,6 +103,6 @@
     </div>
   </div>
 </div>
-<script src="js/main.js?v=202611152243" defer></script>
+<script src="js/main.js?v=202611152245" defer></script>
 </body>
 </html>

@@ -791,3 +791,6 @@ label { font-size: 0.875rem; }
 @media (max-width: 760px) {
   .hero > img { object-position: right center; }
 }
+
+/* Required-field marker on the contact form. */
+.req { color: var(--lime-dark); font-weight: 500; }
