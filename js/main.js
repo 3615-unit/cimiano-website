@@ -65,7 +65,9 @@ if ("IntersectionObserver" in window) {
         io.unobserve(entry.target);
       }
     });
-  }, { rootMargin: "0px 0px -8% 0px" });
+  // Start once the block's top has climbed above the bottom fifth of the
+  // screen, so the soft blur-in is actually seen while scrolling down.
+  }, { rootMargin: "0px 0px -20% 0px" });
   revealed.forEach((el) => io.observe(el));
 } else {
   revealed.forEach((el) => el.classList.add("in"));
