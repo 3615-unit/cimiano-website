@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cimiano | Options bloc devis</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/v2.css">
+<style>
+  /* Temporary comparison page. Each option overrides the quote box colors. */
+  .label { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 28px 4px -8px; }
+  .label b { color: var(--ink); font-weight: 500; }
+
+  /* A: Espresso brown. Warm, rich, pairs with the tan page. */
+  .cta.opt-a { background: #3b2a1f; }
+  .cta.opt-a h2 em { color: #d9b58c; }
+
+  /* B: Near-black ink. Maximum contrast, very restrained. */
+  .cta.opt-b { background: #1d1c1a; }
+  .cta.opt-b h2 em { color: var(--cream); }
+
+  /* C: Photo behind a dark veil. The work itself does the talking. */
+  .cta.opt-c { position: relative; overflow: hidden; background: #1d1c1a; isolation: isolate; }
+  .cta.opt-c::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("../img/chantier.webp") center / cover; }
+  .cta.opt-c::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,16,10,.82), rgba(20,16,10,.55)); }
+  .cta.opt-c h2 em { color: var(--cream); }
+
+  /* D: White card, dark text, a fine lime rule as the only accent. */
+  .cta.opt-d { background: #fff; color: var(--ink); border: 1px solid rgba(29,28,26,.06); }
+  .cta.opt-d::before { content: ""; position: absolute; left: clamp(28px, 5vw, 64px); top: 0; width: 64px; height: 3px; background: var(--lime); }
+  .cta.opt-d { position: relative; }
+  .cta.opt-d h2 em { color: var(--green); }
+  .cta.opt-d p { color: var(--muted); }
+  .cta.opt-d .tel { color: var(--ink); }
+  .cta.opt-d .btn-arrow { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .cta.opt-d .btn-arrow:hover { background: transparent; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="card">
+    <span class="eyebrow">Aperçu</span>
+    <h2>Bloc « devis » : <em>quatre options</em></h2>
+    <p class="muted">Même texte, même mise en page. Seules les couleurs changent. Le bloc vert foncé « savoir-faire » est juste au-dessus sur la page d’accueil.</p>
+  </section>
+
+  <p class="label"><b>A</b> · Brun espresso</p>
+  <section class="card cta opt-a">
+    <div><h2>Un projet de <em>rénovation</em> ?</h2><p>Parlez-nous de votre projet. Le devis est gratuit.</p></div>
+    <div class="cta-actions"><a class="tel" href="#">06 28 56 47 87</a><a class="btn-arrow" href="#">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </section>
+
+  <p class="label"><b>B</b> · Noir encre</p>
+  <section class="card cta opt-b">
+    <div><h2>Un projet de <em>rénovation</em> ?</h2><p>Parlez-nous de votre projet. Le devis est gratuit.</p></div>
+    <div class="cta-actions"><a class="tel" href="#">06 28 56 47 87</a><a class="btn-arrow" href="#">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </section>
+
+  <p class="label"><b>C</b> · Photo de chantier assombrie</p>
+  <section class="card cta opt-c">
+    <div><h2>Un projet de <em>rénovation</em> ?</h2><p>Parlez-nous de votre projet. Le devis est gratuit.</p></div>
+    <div class="cta-actions"><a class="tel" href="#">06 28 56 47 87</a><a class="btn-arrow" href="#">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </section>
+
+  <p class="label"><b>D</b> · Blanc, filet vert</p>
+  <section class="card cta opt-d">
+    <div><h2>Un projet de <em>rénovation</em> ?</h2><p>Parlez-nous de votre projet. Le devis est gratuit.</p></div>
+    <div class="cta-actions"><a class="tel" href="#">06 28 56 47 87</a><a class="btn-arrow" href="#">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </section>
+</div>
+</body>
+</html>
