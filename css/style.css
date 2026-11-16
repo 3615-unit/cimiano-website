@@ -632,6 +632,8 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .cta h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
 .cta p { color: rgba(244, 239, 232, 0.78); }
 .cta .tel { color: var(--cream); font-weight: 500; letter-spacing: 0.02em; }
+/* Phone number sits centred under the quote button. */
+.cta .cta-actions { flex-direction: column; align-items: center; gap: 12px; }
 .cta .btn-arrow { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 .cta .btn-arrow:hover { background: transparent; color: var(--cream); border-color: var(--cream); }
 @media (max-width: 760px) {
