@@ -598,13 +598,20 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .dark { background: var(--dark); color: var(--cream); border-color: transparent; }
 .dark .eyebrow { color: rgba(244, 239, 232, 0.7); }
 .dark .rows li { border-color: rgba(244, 239, 232, 0.14); position: relative; isolation: isolate; }
-/* Hover: a soft panel fades in behind the row. Nothing inside moves. */
+/* Hover (mouse only): the other rows fade back and a thin lime line draws
+   across the top of the row being pointed at. Nothing moves. */
+.dark .rows li { transition: opacity 0.35s ease; }
 .dark .rows li::before {
-  content: ""; position: absolute; inset: 0 -20px; z-index: -1;
-  border-radius: 14px; background: var(--dark-2);
-  opacity: 0; transition: opacity 0.4s ease;
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+  background: var(--lime);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.dark .rows li:hover::before { opacity: 1; }
+@media (hover: hover) {
+  .dark .rows:hover li { opacity: 0.4; }
+  .dark .rows li:hover { opacity: 1; }
+  .dark .rows li:hover::before { transform: scaleX(1); }
+}
 .dark .rows .num { color: rgba(244, 239, 232, 0.45); }
 .dark .rows h3 { font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 400; color: var(--cream); }
 .dark .rows p { color: rgba(244, 239, 232, 0.65); }
@@ -740,4 +747,8 @@ label { font-size: 0.875rem; }
   font-weight: 500;
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dark .rows li, .dark .rows li::before { transition: none; }
 }
