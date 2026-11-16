@@ -31,7 +31,7 @@ PAGE = {
     "section2": {
         "eyebrow": "Artisan Handibat",
         "h2": "Une expertise <em>reconnue</em>",
-        "text": "La marque Handibat distingue les professionnels du bâtiment formés à l’accessibilité et à l’adaptation des logements. Elle vous garantit une écoute attentive des besoins de chacun et des aménagements conformes. Selon votre situation, des aides publiques peuvent financer une partie des travaux : nous vous orientons dans vos démarches.",
+        "text": "La <a href=\"artisan-handibat-paris\">marque Handibat</a> distingue les professionnels du bâtiment formés à l’accessibilité et à l’adaptation des logements. Elle vous garantit une écoute attentive des besoins de chacun et des aménagements conformes. Selon votre situation, des aides publiques peuvent financer une partie des travaux : nous vous orientons dans vos démarches.",
         "img": ("pmr-chez-soi.webp", "Un couple heureux dans son appartement en cours de rénovation"),
     },
     "faq": [

@@ -1,0 +1,101 @@
+"""Specs for the three certification pages (2026-11-15). Run this file to write
+one spec per page in tools/pages/, then build each with make_trade_page.py."""
+import pathlib
+import pprint
+
+PARENT = ("certifications", "Nos certifications")
+DEVIS = ("Le devis est-il gratuit ?", "Oui. Décrivez-nous votre projet, nous revenons vers vous rapidement pour en parler et vous proposer un devis détaillé.")
+
+PAGES = [
+{
+ "slug": "artisan-rge-paris",
+ "parent": PARENT,
+ "title": "Artisan RGE Qualibat à Paris : vos travaux aidés | Cimiano",
+ "desc": "Cimiano, entreprise certifiée RGE Qualibat à Paris : des travaux de rénovation énergétique contrôlés, et l’accès aux aides de l’État selon votre situation. Devis gratuit.",
+ "service": "Rénovation énergétique par un artisan RGE", "crumb": "RGE Qualibat",
+ "h1": "Artisan RGE Qualibat à <em>Paris</em>",
+ "lead": "Des travaux de rénovation énergétique réalisés par une entreprise reconnue, et la possibilité de les faire financer en partie par l’État.",
+ "intro": "RGE signifie « Reconnu Garant de l’Environnement ». Délivrée par Qualibat et reconnue par le ministère de la Transition écologique, cette certification atteste de notre savoir-faire en rénovation énergétique. Pour vous, c’est l’assurance d’un travail contrôlé, et la condition pour accéder à de nombreuses aides publiques.",
+ "hero": ("toits-paris.webp", "Toits de Paris sous le soleil"),
+ "section1": {"eyebrow": "Ce que le label vous garantit", "h2": "Une entreprise <em>contrôlée</em>",
+   "text": "La certification RGE n’est pas un simple logo : elle est attribuée après vérification de nos compétences, puis contrôlée dans le temps.",
+   "img": ("isolation-combles.webp", "Isolation de combles sous une fenêtre de toit")},
+ "ticks": ["Compétences en rénovation énergétique vérifiées", "Chantiers contrôlés dans la durée", "Accès aux aides de l’État, selon votre situation",
+   "Conseil sur les travaux les plus efficaces", "Documents fournis pour vos dossiers d’aides", "Travaux couverts par notre garantie décennale"],
+ "steps_heading": ("Vos travaux aidés", "Étape par <em>étape</em>"),
+ "steps": [("Visite et conseil", "Nous étudions votre logement et vous indiquons les travaux qui amélioreront vraiment votre confort."),
+   ("Devis adapté aux aides", "Notre devis comporte les informations demandées par les dispositifs d’aide, pour constituer votre dossier sans difficulté."),
+   ("Réalisation", "Les travaux sont réalisés dans les règles de l’art, sur un chantier protégé et tenu propre."),
+   ("Documents remis", "Nous vous remettons la facture et les justificatifs nécessaires pour finaliser vos demandes d’aide.")],
+ "section2": {"eyebrow": "Les travaux concernés", "h2": "Confort et <em>économies</em>",
+   "text": "Isolation des combles, des murs et des plafonds, rénovation globale d’un appartement : découvrez nos pages <a href=\"isolation-thermique-phonique-paris\">isolation thermique et phonique</a> et <a href=\"renovation-appartement-paris\">rénovation d’appartement</a>. Nous vous indiquons, pour chaque projet, les aides auxquelles vous pouvez prétendre.",
+   "img": ("facade-haussmann.webp", "Façade d’immeuble haussmannien à Paris")},
+ "faq": [("Que signifie RGE ?", "RGE veut dire « Reconnu Garant de l’Environnement ». C’est une certification qui distingue les entreprises compétentes en rénovation énergétique."),
+   ("Pourquoi choisir un artisan RGE ?", "Pour la qualité du travail, contrôlée par un organisme indépendant, et parce que de nombreuses aides publiques ne sont accordées que si les travaux sont réalisés par une entreprise RGE."),
+   ("Quelles aides puis-je obtenir ?", "Selon votre situation et vos travaux, plusieurs dispositifs de l’État peuvent financer une partie de la rénovation énergétique. Nous vous orientons vers ceux qui vous concernent."),
+   ("Faut-il faire la demande d’aide avant les travaux ?", "Pour certaines aides, oui. C’est pourquoi nous en parlons dès le devis, afin que vous ne perdiez aucun droit."),
+   ("Comment vérifier votre certification ?", "Notre certification est consultable dans l’annuaire officiel des professionnels RGE, sur le site France Rénov’."), DEVIS],
+},
+{
+ "slug": "artisan-handibat-paris",
+ "parent": PARENT,
+ "title": "Artisan Handibat à Paris : adapter son logement | Cimiano",
+ "desc": "Cimiano, artisan titulaire de la marque Handibat à Paris : des professionnels formés à l’accessibilité pour adapter votre logement à la mobilité de chacun. Devis gratuit.",
+ "service": "Adaptation du logement par un artisan Handibat", "crumb": "Handibat",
+ "h1": "Artisan Handibat à <em>Paris</em>",
+ "lead": "Adapter un logement demande plus qu’un savoir-faire technique : de l’écoute, de la délicatesse et une vraie connaissance de l’accessibilité.",
+ "intro": "Handibat est une marque créée par la CAPEB, l’organisation professionnelle de l’artisanat du bâtiment. Elle distingue les artisans formés à l’accessibilité et à l’adaptation des logements pour les personnes âgées, à mobilité réduite ou en situation de handicap. Nous en sommes titulaires.",
+ "hero": ("pmr-salle-de-bain.webp", "Salle de bain accessible avec douche de plain-pied et barres d’appui"),
+ "section1": {"eyebrow": "Ce que la marque vous garantit", "h2": "Une écoute <em>attentive</em>",
+   "text": "Chaque situation est unique. La marque Handibat garantit que nous savons évaluer les besoins réels de chacun et y répondre avec des solutions adaptées.",
+   "img": ("couloir.webp", "Couloir d’immeuble parisien lumineux et dégagé")},
+ "ticks": ["Artisans formés à l’accessibilité", "Évaluation des besoins au quotidien", "Aménagements conformes aux normes",
+   "Solutions évolutives, pensées pour durer", "Orientation vers les aides possibles", "Respect de l’esthétique de votre intérieur"],
+ "steps_heading": ("Comment nous travaillons", "Un accompagnement <em>humain</em>"),
+ "steps": [("Écoute", "Nous prenons le temps de comprendre vos habitudes, vos difficultés et vos envies, ou celles de votre proche."),
+   ("Diagnostic", "Nous identifions les aménagements les plus utiles, pièce par pièce, et vous expliquons nos choix."),
+   ("Travaux", "Un chantier organisé pour préserver votre quotidien, avec un seul interlocuteur."),
+   ("Vérification", "Nous testons chaque aménagement avec vous pour qu’il réponde vraiment à vos besoins.")],
+ "section2": {"eyebrow": "Les travaux concernés", "h2": "Rester chez <em>soi</em>",
+   "text": "Douche de plain-pied, barres d’appui, circulations élargies, accès à l’immeuble : découvrez notre page <a href=\"adaptation-pmr-paris\">adaptation PMR</a> et nos <a href=\"renovation-salle-de-bain-paris\">salles de bain sur mesure</a>, accessibles sans renoncer à l’élégance.",
+   "img": ("pmr-chez-soi.webp", "Un couple heureux dans son appartement")},
+ "faq": [("Qu’est-ce que la marque Handibat ?", "C’est une marque de la CAPEB qui distingue les artisans du bâtiment formés à l’accessibilité et à l’adaptation des logements."),
+   ("Pour qui adaptez-vous les logements ?", "Pour les personnes âgées qui souhaitent rester chez elles, les personnes à mobilité réduite ou en situation de handicap, et leurs proches."),
+   ("Existe-t-il des aides pour adapter un logement ?", "Oui, selon votre situation, des aides publiques peuvent financer une partie des travaux d’adaptation. Nous vous orientons dans vos démarches."),
+   ("Intervenez-vous aussi dans les parties communes ?", "Oui. Accès, rampes, mains courantes, éclairage : nous travaillons avec les syndics pour rendre les immeubles plus accessibles."), DEVIS],
+},
+{
+ "slug": "certibiocide-paris",
+ "parent": PARENT,
+ "title": "Entreprise certifiée Certibiocide et CS3D à Paris | Cimiano",
+ "desc": "Désinsectisation, désinfection et dératisation par une entreprise certifiée Certibiocide et adhérente CS3D à Paris : produits employés en toute sécurité, pour particuliers et copropriétés.",
+ "service": "Désinsectisation et dératisation certifiées", "crumb": "Certibiocide et CS3D",
+ "h1": "Certibiocide et CS3D à <em>Paris</em>",
+ "lead": "Traiter les nuisibles demande des produits puissants. Les employer en toute sécurité demande une certification.",
+ "intro": "La certification Certibiocide est obligatoire pour les professionnels qui utilisent certains produits biocides, comme les insecticides et les raticides. Nous en sommes titulaires, et nous sommes adhérents de la CS3D, la chambre syndicale des professionnels de la désinfection, de la désinsectisation et de la dératisation.",
+ "hero": ("desinsectisation.webp", "Technicien en tenue de protection traitant un appartement"),
+ "section1": {"eyebrow": "Ce que cela vous garantit", "h2": "Un traitement <em>sûr</em>",
+   "text": "Nos certifications attestent que nous savons choisir, doser et appliquer les produits en protégeant les occupants, les animaux et l’environnement.",
+   "img": ("cave.webp", "Cave voûtée en briques d’un immeuble parisien")},
+ "ticks": ["Produits biocides employés légalement et en sécurité", "Connaissance des risques et des précautions", "Protocoles adaptés à chaque nuisible",
+   "Engagement déontologique de la CS3D", "Conseils de prévention après traitement", "Interventions pour particuliers et copropriétés"],
+ "steps_heading": ("Comment nous intervenons", "Un protocole <em>rigoureux</em>"),
+ "steps": [("Diagnostic", "Nous identifions le nuisible, l’étendue de l’infestation et les zones à traiter."),
+   ("Protocole", "Nous choisissons le traitement le plus adapté et vous expliquons comment préparer les lieux."),
+   ("Traitement", "Intervention rapide et discrète, réalisée dans le respect des règles d’utilisation des produits."),
+   ("Suivi", "Nous vérifions l’efficacité du traitement et vous conseillons pour éviter toute réapparition.")],
+ "section2": {"eyebrow": "Particuliers et copropriétés", "h2": "Un immeuble <em>serein</em>",
+   "text": "Appartements, caves, locaux poubelles, parties communes : découvrez notre page <a href=\"desinsectisation-paris\">désinsectisation à Paris</a>. Pour les syndics, nos certifications sont une garantie de sérieux et de conformité.",
+   "img": ("couloir.webp", "Couloir d’immeuble parisien")},
+ "faq": [("Qu’est-ce que la certification Certibiocide ?", "C’est un certificat individuel obligatoire pour les professionnels qui utilisent certains produits biocides. Il atteste de la connaissance des risques et des bonnes pratiques d’utilisation."),
+   ("Qu’est-ce que la CS3D ?", "La CS3D est la chambre syndicale qui regroupe les professionnels de la désinfection, de la désinsectisation et de la dératisation. Ses adhérents s’engagent à respecter les bonnes pratiques du métier."),
+   ("Pourquoi faire appel à une entreprise certifiée ?", "Pour un traitement efficace et sans danger : les produits professionnels sont puissants, et seule une entreprise certifiée est autorisée à les employer."),
+   ("Intervenez-vous pour les syndics de copropriété ?", "Oui. Nous intervenons dans les parties communes et pouvons traiter l’immeuble dans son ensemble."), DEVIS],
+},
+]
+
+if __name__ == "__main__":
+    here = pathlib.Path(__file__).parent
+    for p in PAGES:
+        (here / f"{p['slug']}.py").write_text("PAGE = " + pprint.pformat(p, width=120, sort_dicts=False) + "\n")
+        print("spec", p["slug"])

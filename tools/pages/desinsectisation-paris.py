@@ -30,7 +30,7 @@ PAGE = {'slug': 'desinsectisation-paris',
             'Nous vérifions l’efficacité du traitement et vous conseillons pour éviter toute réapparition.')],
  'section2': {'eyebrow': 'Certibiocide et CS3D',
               'h2': 'Une expertise <em>certifiée</em>',
-              'text': 'Nous sommes titulaires de la certification Certibiocide, obligatoire pour employer les produits '
+              'text': 'Nous sommes titulaires de la <a href=\"certibiocide-paris\">certification Certibiocide</a>, obligatoire pour employer les produits '
                       'biocides, et adhérents de la CS3D, la chambre syndicale des professionnels de la désinfection, '
                       'désinsectisation et dératisation.',
               'img': ('couloir.webp', 'Couloir d’immeuble parisien')},

@@ -31,7 +31,7 @@ PAGE = {'slug': 'isolation-thermique-phonique-paris',
             'Vous profitez d’un logement plus confortable. Nos travaux sont couverts par notre garantie décennale.')],
  'section2': {'eyebrow': 'Artisan RGE Qualibat',
               'h2': 'Des travaux <em>aidés</em>',
-              'text': 'Notre certification RGE Qualibat vous permet, selon votre situation, de bénéficier des aides de '
+              'text': 'Notre <a href=\"artisan-rge-paris\">certification RGE Qualibat</a> vous permet, selon votre situation, de bénéficier des aides de '
                       'l’État pour vos travaux d’isolation. Nous vous fournissons les documents nécessaires et vous '
                       'orientons dans vos démarches.',
               'img': ('secteur-comble.webp', 'Chambre aménagée sous les combles')},

@@ -32,6 +32,8 @@ def plain(text):
 
 def build(p):
     url = f"https://www.cimiano.fr/{p['slug']}"
+    parent_href, parent_label = p.get("parent", ("savoir-faire", "Notre savoir-faire"))
+    steps_eyebrow, steps_title = p.get("steps_heading", ("Comment nous travaillons", "Notre <em>méthode</em>"))
     ld = [
         {"@context": "https://schema.org", "@type": "Service", "name": p["title"].split(" | ")[0],
          "serviceType": p["service"],
@@ -43,13 +45,13 @@ def build(p):
              "acceptedAnswer": {"@type": "Answer", "text": plain(fr(a))}} for q, a in p["faq"]]},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.cimiano.fr/"},
-            {"@type": "ListItem", "position": 2, "name": "Notre savoir-faire",
-             "item": "https://www.cimiano.fr/savoir-faire"},
+            {"@type": "ListItem", "position": 2, "name": parent_label,
+             "item": f"https://www.cimiano.fr/{parent_href}"},
             {"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url}]},
     ]
 
     head = f'''    <main id="contenu">
-    <a class="eyebrow eyebrow-link" href="savoir-faire">Notre savoir-faire</a>
+    <a class="eyebrow eyebrow-link" href="{parent_href}">{parent_label}</a>
     <h1>{p["h1"]}</h1>
     <p class="lead">{fr(p["lead"])}</p>
     <p class="intro">{fr(p["intro"])}</p>
@@ -78,8 +80,8 @@ def build(p):
   </section>
 
   <section class="card reveal">
-    <span class="eyebrow">Comment nous travaillons</span>
-    <h2 class="section-title">Notre <em>méthode</em></h2>
+    <span class="eyebrow">{steps_eyebrow}</span>
+    <h2 class="section-title">{steps_title}</h2>
     <ol class="promises">
 {steps}
     </ol>
