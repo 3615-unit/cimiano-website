@@ -753,16 +753,14 @@ label { font-size: 0.875rem; }
   .dark .rows li, .dark .rows li::before { transition: none; }
 }
 
-/* Home hero: the green dot before "Entreprise familiale · Paris" pulses
-   slowly, like a "live" indicator. */
+/* Home hero: the green dot before "Entreprise familiale · Paris" fades
+   very gently in and out, like a quiet "live" light. No ring. */
 .hero-body .eyebrow::before {
-  box-shadow: 0 0 0 0 rgba(163, 204, 0, 0.6);
-  animation: live-dot 2.4s ease-in-out infinite;
+  animation: live-dot 3.2s ease-in-out infinite;
 }
 @keyframes live-dot {
-  0%   { opacity: 1;   box-shadow: 0 0 0 0 rgba(163, 204, 0, 0.6); }
-  60%  { opacity: 0.5; box-shadow: 0 0 0 7px rgba(163, 204, 0, 0); }
-  100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(163, 204, 0, 0); }
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-body .eyebrow::before { animation: none; }
