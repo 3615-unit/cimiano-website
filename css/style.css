@@ -573,7 +573,9 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 /* ---------- Hero ---------- */
 
 .hero { min-height: min(92vh, 860px); }
-.hero::after { background: linear-gradient(180deg, rgba(20,16,10,.35) 0%, rgba(20,16,10,.15) 40%, rgba(20,16,10,.75) 100%); }
+/* Darker veil behind the home headline so it reads on any part of the photo. */
+.hero::after { background: linear-gradient(180deg, rgba(20,16,10,.45) 0%, rgba(20,16,10,.4) 40%, rgba(20,16,10,.82) 100%); }
+.hero h1 { text-shadow: 0 2px 24px rgba(20, 16, 10, 0.35); }
 .hero-body { display: grid; gap: 32px; }
 .hero h1 { max-width: 13em; margin: 0; }
 .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
