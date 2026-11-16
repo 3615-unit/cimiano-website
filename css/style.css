@@ -517,6 +517,7 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   padding: 11px 20px; background: var(--lime); color: var(--ink);
 }
 .btn:hover { background: #b6dd16; }
+.btn-icon { display: none; } /* shown on phones only, see below */
 .btn-arrow {
   display: inline-flex; align-items: center; gap: 14px;
   padding: 14px 24px;
@@ -650,12 +651,13 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
 .js .reveal.in { filter: none; }
 
 @media (max-width: 760px) {
-  /* Phones: the quote button stays, shortened to "Devis", as tall as the
-     round menu button next to it. */
-  .header-actions .btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; }
-  .btn-long { display: none; }
+  /* Phones: the quote button becomes a green circle with a document icon,
+     exactly the size of the round menu button next to it. */
+  .header-actions .btn, .menu-pill { width: 40px; height: 40px; padding: 0; justify-content: center; }
+  .header-actions .btn { display: inline-flex; align-items: center; }
+  .header-actions .btn-text { display: none; }
+  .header-actions .btn-icon { display: block; width: 20px; height: 20px; }
   .menu-pill span { display: none; }
-  .menu-pill { padding: 0 12px; }
   .stack-item .num { padding-bottom: 16px; }
   .mini-bar { top: 8px; }
 }
