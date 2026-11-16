@@ -420,7 +420,7 @@ textarea { min-height: 160px; resize: vertical; }
 .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .cta .tel { color: #fff; text-decoration: none; font-size: 1.15rem; }
 
-.site-footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 32px; font-size: 0.92rem; }
+.site-footer { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; font-size: 0.92rem; }
 .site-footer img { height: 40px; width: auto; }
 .site-footer address { font-style: normal; color: var(--muted); }
 .site-footer address + address { margin-top: 14px; }
@@ -445,7 +445,7 @@ textarea { min-height: 160px; resize: vertical; }
 
 @media (max-width: 980px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .site-footer { grid-template-columns: 1fr 1fr; }
+  .site-footer { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
