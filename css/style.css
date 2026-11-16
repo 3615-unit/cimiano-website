@@ -648,6 +648,13 @@ h3 { font-weight: 500; letter-spacing: -0.01em; }
   .dark .rows li:hover { opacity: 1; }
   .dark .rows li:hover::before { transform: scaleX(1); }
 }
+/* Touch screens: the same highlight follows the row in the middle of the
+   screen while scrolling (js/main.js sets .has-current and .is-current). */
+@media (hover: none) {
+  .dark .rows.has-current li { opacity: 0.4; }
+  .dark .rows li.is-current { opacity: 1; }
+  .dark .rows li.is-current::before { transform: scaleX(1); }
+}
 .dark .rows .num { color: rgba(244, 239, 232, 0.45); }
 .dark .rows h3 { font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 400; color: var(--cream); }
 .dark .rows p { color: rgba(244, 239, 232, 0.65); }

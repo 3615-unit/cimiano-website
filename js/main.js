@@ -71,6 +71,29 @@ if ("IntersectionObserver" in window) {
   revealed.forEach((el) => el.classList.add("in"));
 }
 
+// Touch screens have no hover, so the savoir-faire list highlights the row
+// crossing the middle of the screen instead. The band is the middle 10%.
+const rowLists = document.querySelectorAll(".dark .rows");
+if (rowLists.length && "IntersectionObserver" in window && matchMedia("(hover: none)").matches) {
+  rowLists.forEach((list) => {
+    const rows = list.querySelectorAll("li");
+    const band = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        rows.forEach((row) => row.classList.toggle("is-current", row === entry.target));
+        list.classList.add("has-current");
+      });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    rows.forEach((row) => band.observe(row));
+    // Once the list has left the screen, clear the highlight.
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) return;
+      list.classList.remove("has-current");
+      rows.forEach((row) => row.classList.remove("is-current"));
+    }).observe(list);
+  });
+}
+
 // Contact form: build an email from the fields and open the visitor's mail app.
 // No server, no third-party service.
 const form = document.getElementById("contact-form");
