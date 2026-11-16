@@ -24,6 +24,7 @@ Fonts (Instrument Serif and Inter) are served from `fonts/`, not from Google.
 
 - Text: edit the `.html` file directly. The header, menu and footer are repeated in each page, so a change there goes in every file.
 - Styles: `css/style.css`.
+- After changing `css/style.css` or `js/main.js`, bump the `?v=` number on their links in every page (any new number, e.g. today's date and time). Browsers keep these files for 10 minutes, and the new number forces a fresh download.
 - Images: `img/`. Keep them as `.webp` and under about 300 KB.
 
 Push to `main` and GitHub Pages publishes within a minute or two.
