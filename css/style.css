@@ -746,6 +746,7 @@ body, .muted, .page-head .intro, input, textarea { font-size: var(--fs-body); }
 .tile .num, .trade .num, .promises .num, .rows .num, .form-note, .foot-bottom { font-size: var(--fs-xs); }
 label { font-size: 0.875rem; }
 .cta .tel { font-size: 1.125rem; font-weight: 500; }
+@media (min-width: 761px) { .cta .tel { font-size: 1rem; } } /* a bit smaller under the button on computers */
 
 /* Every small-capitals element shares one style. */
 .eyebrow, .btn, .btn-arrow, .menu-pill, .foot-label {
