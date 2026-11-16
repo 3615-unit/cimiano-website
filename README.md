@@ -20,6 +20,16 @@ The old Wix addresses (`/company`, `/expertise`, `/solutions`, `/responsibility`
 
 Fonts (Instrument Serif and Inter) are served from `fonts/`, not from Google.
 
+## Trade pages
+
+Pages like `/renovation-salle-de-bain-paris` and `/climatisation-paris` are generated:
+
+```bash
+python3 tools/make_trade_page.py tools/pages/climatisation-paris.py
+```
+
+Each spec in `tools/pages/` holds the text, photos and FAQ. The script copies the header, menu and footer from `savoir-faire.html`. Then link the new page from its card in `savoir-faire.html` and add it to `sitemap.xml`. No prices on these pages: the call to action is always the quote request.
+
 ## Edit
 
 - Text: edit the `.html` file directly. The header, menu and footer are repeated in each page, so a change there goes in every file.
