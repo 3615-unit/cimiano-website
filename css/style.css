@@ -445,7 +445,13 @@ textarea { min-height: 160px; resize: vertical; }
   :root { --gutter: 16px; --radius: 16px; }
   body { font-size: 16px; }
   .stack-item, .promises { grid-template-columns: 1fr; }
-  .stack-item { position: static; min-height: 0; }
+  /* Phones keep the stacking cards. They stick just below the floating
+     bar (about 64px tall) and each sits 12px lower than the one before. */
+  .stack-item { min-height: 0; top: 76px; }
+  .stack-item:nth-child(2) { top: 88px; }
+  .stack-item:nth-child(3) { top: 100px; }
+  /* Shorter photos so a whole card fits on screen while it is stuck. */
+  .stack .stack-item img { min-height: 0; height: 190px; }
   .rows li { grid-template-columns: 1fr; gap: 6px; }
   .grid, .grid-2 { grid-template-columns: 1fr; }
   .trade { grid-template-columns: 100px 1fr; }
