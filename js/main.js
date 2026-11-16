@@ -6,14 +6,21 @@ const menu = document.getElementById("menu");
 const openBtn = document.querySelector("[data-menu-open]");
 const closeBtn = document.querySelector(".menu-close");
 
+// Remember which button opened the menu, so closing returns focus there
+// without scrolling the page (the sticky bar's button may be far from the top one).
+let opener = null;
 function setMenu(open) {
   if (!menu) return;
   menu.classList.toggle("open", open);
   menu.setAttribute("aria-hidden", String(!open));
   document.body.classList.toggle("menu-open", open);
   openBtn && openBtn.setAttribute("aria-expanded", String(open));
-  if (open) closeBtn && closeBtn.focus();
-  else openBtn && openBtn.focus();
+  if (open) {
+    opener = document.activeElement;
+    closeBtn && closeBtn.focus({ preventScroll: true });
+  } else if (opener && opener.focus) {
+    opener.focus({ preventScroll: true });
+  }
 }
 openBtn && openBtn.addEventListener("click", () => setMenu(true));
 // The close button and the dimmed backdrop both close the menu.
@@ -32,6 +39,21 @@ document.addEventListener("keydown", (e) => {
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 });
+
+// Compact bar: slides in once the top section (hero or page title) has
+// scrolled out of view. Its Menu button opens the same side menu.
+const miniBar = document.querySelector(".mini-bar");
+const topSection = document.querySelector(".hero, .page-head");
+if (miniBar && topSection && "IntersectionObserver" in window) {
+  new IntersectionObserver((entries) => {
+    const show = !entries[0].isIntersecting;
+    miniBar.classList.toggle("show", show);
+    miniBar.setAttribute("aria-hidden", String(!show));
+    miniBar.querySelectorAll("a, button").forEach((el) => { el.tabIndex = show ? 0 : -1; });
+  }).observe(topSection);
+  const miniMenu = miniBar.querySelector("[data-mini-menu]");
+  miniMenu && miniMenu.addEventListener("click", () => setMenu(true));
+}
 
 // Fade sections in as they scroll into view.
 const revealed = document.querySelectorAll(".reveal");

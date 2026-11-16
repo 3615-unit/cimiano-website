@@ -13,50 +13,59 @@
 <meta property="og:description" content="Cimiano, entreprise familiale de rénovation d’intérieur à Paris depuis 1960. Appartements, parties communes, locaux commerciaux. Devis gratuit.">
 <meta property="og:url" content="https://www.cimiano.fr/">
 <meta property="og:image" content="https://www.cimiano.fr/img/hero.webp">
-<meta name="theme-color" content="#f5eee4">
+<meta name="theme-color" content="#f4efe8">
 <link rel="icon" href="img/favicon.webp" type="image/webp">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "Cimiano", "description": "Entreprise familiale de rénovation d’intérieur à Paris et en Région parisienne depuis 1960.", "url": "https://www.cimiano.fr", "logo": "https://www.cimiano.fr/img/logo-dark.svg", "image": "https://www.cimiano.fr/img/hero.webp", "telephone": "+33628564787", "email": "paul@cimiano.fr", "foundingDate": "1960", "areaServed": ["Paris", "Île-de-France"], "address": [{"@type": "PostalAddress", "streetAddress": "52 Avenue de Saint-Ouen", "postalCode": "75018", "addressLocality": "Paris", "addressCountry": "FR"}, {"@type": "PostalAddress", "streetAddress": "15 Rue du Docteur Goujon", "postalCode": "75012", "addressLocality": "Paris", "addressCountry": "FR"}]}</script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
+
+<div class="mini-bar" aria-hidden="true">
+  <a class="logo" href="./" tabindex="-1"><img src="img/logo-dark.svg" alt="Cimiano" width="114" height="30"></a>
+  <div class="header-actions">
+    <a class="btn" href="contact" tabindex="-1">Devis gratuit</a>
+    <button class="menu-pill" type="button" data-mini-menu tabindex="-1"><span>Menu</span><i></i></button>
+  </div>
+</div>
+
 <div class="wrap">
   <section class="hero">
     <img src="img/hero.webp" alt="" width="2200" height="1128" fetchpriority="high">
     <header class="site-header on-dark">
-  <a class="logo" href="./" aria-label="Cimiano, accueil"><img src="img/logo-white.webp" alt="Cimiano, entreprise familiale" width="174" height="46"></a>
-  <div class="header-actions">
-    <a class="btn" href="contact">Devis gratuit</a>
-    <button class="burger" type="button" data-menu-open aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
+      <a class="logo" href="./" aria-label="Cimiano, accueil"><img src="img/logo-white.webp" alt="Cimiano, entreprise familiale" width="174" height="46"></a>
+      <div class="header-actions">
+        <a class="btn" href="contact">Devis gratuit</a>
+        <button class="menu-pill" type="button" data-menu-open aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu"><span>Menu</span><i></i></button>
+      </div>
+    </header>
     <main id="contenu" class="hero-body">
-      <h1>Dédiés à l’art de la rénovation parisienne depuis trois générations</h1>
-      <a class="round" href="#histoire" aria-label="Découvrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 3v18M5 14l7 7 7-7"/></svg></a>
+      <span class="eyebrow" style="color:rgba(255,255,255,.85)">Entreprise familiale · Paris</span>
+      <h1>Dédiés à l’art de la rénovation <em>parisienne</em> depuis trois générations</h1>
+      <div class="hero-foot">
+        <a class="btn-arrow light" href="#histoire">Découvrir<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+      </div>
     </main>
   </section>
 
   <section class="card split reveal" id="histoire">
     <div>
       <span class="eyebrow">Qui sommes-nous ?</span>
-      <h2>Une histoire de famille</h2>
+      <h2>Une histoire de <em>famille</em></h2>
       <p class="muted">Depuis 1960, la famille Cimiano s’engage à offrir des rénovations de haute qualité. Trois générations d’expertise au service de projets réalisés avec rigueur, soin et excellence.</p>
-      <p><a class="btn" href="company">Notre histoire</a></p>
+      <p><a class="btn-arrow" href="qui-sommes-nous">Notre histoire<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></p>
     </div>
     <img src="img/famille.webp" alt="Trois générations de la famille Cimiano" loading="lazy" width="1200" height="1076">
   </section>
 
-  <!-- Text comes first in the code so phones show it before the video.
-       split-flip puts the video on the left on wide screens. -->
   <section class="card split split-flip reveal">
     <div>
       <div class="title-logo">
         <img src="img/m6-logo.webp" alt="M6" width="300" height="231" loading="lazy">
-        <h2>Notre savoir-faire à la télévision</h2>
+        <h2>Notre savoir-faire à la <em>télévision</em></h2>
       </div>
       <p class="muted">Retrouvez Paul Cimiano dans l’émission <em>Proprio à tout prix – L’Hebdo</em> sur M6, où il présente son approche exigeante de la rénovation des petits espaces parisiens.</p>
     </div>
-    <!-- preload="none": the 18 MB clip only downloads when the visitor presses play. -->
     <video class="tv-media" controls playsinline preload="none" poster="img/m6-emission.webp" width="1280" height="720" aria-label="Paul Cimiano dans l’émission Proprio à tout prix – L’Hebdo">
       <source src="video/cimiano-m6.mp4" type="video/mp4">
     </video>
@@ -66,30 +75,30 @@
     <img src="img/chantier.webp" alt="Chantier de rénovation Cimiano" loading="lazy" width="2200" height="1284">
     <div>
       <span class="eyebrow">Nos rénovations</span>
-      <h2>Nos secteurs d’activités</h2>
+      <h2>Nos secteurs d’<em>activités</em></h2>
       <p>Nous apportons notre exigence et notre savoir-faire à la rénovation d’appartements, de parties communes et de locaux commerciaux, en alliant élégance, fonctionnalité et qualité irréprochable.</p>
     </div>
-    <a class="round" href="expertise">En savoir plus</a>
+    <a class="btn-arrow light" href="secteurs-d-intervention">En savoir plus<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </section>
 
   <div class="stack">
-      <article class="card stack-item">
-        <div><span class="num">01</span><h3>Appartements</h3><p class="muted">Nous rénovons des appartements parisiens avec une exigence absolue, en alliant élégance, confort et qualité de finition. Chaque projet est pensé sur mesure pour révéler tout le potentiel des espaces de vie.</p></div>
-        <img src="img/secteur-logement.webp" alt="Appartement parisien rénové" loading="lazy" width="1000" height="1000">
-      </article>
-      <article class="card stack-item">
-        <div><span class="num">02</span><h3>Parties communes</h3><p class="muted">Nous redonnons prestige et cachet aux parties communes, en rénovant halls, escaliers et circulations avec soin, pour valoriser durablement les immeubles parisiens.</p></div>
-        <img src="img/secteur-escalier.webp" alt="Escalier d’immeuble parisien" loading="lazy" width="1000" height="1000">
-      </article>
-      <article class="card stack-item">
-        <div><span class="num">03</span><h3>Locaux commerciaux</h3><p class="muted">Nous transformons les espaces professionnels en lieux fonctionnels, accueillants et élégants, renforçant ainsi l’image et l’identité de chaque entreprise.</p></div>
-        <img src="img/secteur-magasin.webp" alt="Devanture de boutique parisienne" loading="lazy" width="1000" height="1000">
-      </article>
+    <article class="card stack-item">
+      <div><span class="num">01</span><h3>Appartements</h3><p class="muted">Nous rénovons des appartements parisiens avec une exigence absolue, en alliant élégance, confort et qualité de finition. Chaque projet est pensé sur mesure pour révéler tout le potentiel des espaces de vie.</p></div>
+      <img src="img/secteur-logement.webp" alt="Appartement parisien rénové" loading="lazy" width="1000" height="1000">
+    </article>
+    <article class="card stack-item">
+      <div><span class="num">02</span><h3>Parties communes</h3><p class="muted">Nous redonnons prestige et cachet aux parties communes, en rénovant halls, escaliers et circulations avec soin, pour valoriser durablement les immeubles parisiens.</p></div>
+      <img src="img/secteur-escalier.webp" alt="Escalier d’immeuble parisien" loading="lazy" width="1000" height="1000">
+    </article>
+    <article class="card stack-item">
+      <div><span class="num">03</span><h3>Locaux commerciaux</h3><p class="muted">Nous transformons les espaces professionnels en lieux fonctionnels, accueillants et élégants, renforçant ainsi l’image et l’identité de chaque entreprise.</p></div>
+      <img src="img/secteur-magasin.webp" alt="Devanture de boutique parisienne" loading="lazy" width="1000" height="1000">
+    </article>
   </div>
 
-  <section class="card reveal">
+  <section class="card dark reveal">
     <span class="eyebrow">Ce que nous faisons</span>
-    <h2>Notre savoir-faire</h2>
+    <h2>Notre <em>savoir-faire</em></h2>
     <ol class="rows">
       <li><span class="num">01</span><h3>Peinture & maçonnerie d’intérieur</h3><p>Travaux de peinture soignés et finitions murales impeccables, accompagnés d’une maçonnerie d’intérieur précise pour redonner structure, cachet et durabilité à vos espaces.</p></li>
       <li><span class="num">02</span><h3>Revêtements sols & murs</h3><p>Pose experte de revêtements haut de gamme : parquet, carrelage, enduits décoratifs et plus encore, pour transformer chaque pièce avec style et fonctionnalité.</p></li>
@@ -102,19 +111,20 @@
       <li><span class="num">09</span><h3>Débarras de locaux</h3><p>Service complet de débarras pour appartements, caves ou locaux professionnels, effectué avec soin, efficacité et respect des lieux.</p></li>
       <li><span class="num">10</span><h3>Vitrification de parquet</h3><p>Vitrification de parquet professionnelle, protégeant et sublimant vos sols avec une finition durable, soignée et respectueuse de votre intérieur.</p></li>
     </ol>
-    <div class="center"><a class="round" href="solutions">En savoir plus</a></div>
+    <div class="center"><a class="btn-arrow light" href="savoir-faire">En savoir plus<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </section>
 
   <section class="card cta reveal" aria-label="Demander un devis">
     <div>
-      <h2>Un projet de rénovation ?</h2>
+      <h2>Un projet de <em>rénovation</em> ?</h2>
       <p>Parlez-nous de votre projet. Le devis est gratuit.</p>
     </div>
     <div class="cta-actions">
       <a class="tel" href="tel:+33628564787">06 28 56 47 87</a>
-      <a class="btn btn-lg" href="contact">Demander un devis</a>
+      <a class="btn-arrow" href="contact">Demander un devis<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
   </section>
+
   <footer class="card site-footer">
     <div><a href="./" aria-label="Cimiano, accueil"><img src="img/logo-dark.svg" alt="Cimiano" width="152" height="40"></a></div>
     <div>
@@ -128,6 +138,7 @@
     <p class="copyright">© <span data-year>2026</span> Cimiano. Entreprise familiale de rénovation à Paris depuis 1960.</p>
   </footer>
 </div>
+
 <div class="menu" id="menu" aria-hidden="true">
   <div class="menu-backdrop" data-menu-close></div>
   <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
@@ -138,11 +149,11 @@
     <nav aria-label="Menu principal">
       <ul>
         <li><a href="./" aria-current="page">Accueil</a></li>
-        <li><a href="company">Qui sommes-nous ?</a></li>
-        <li><a href="expertise">Secteurs d’intervention</a></li>
-        <li><a href="solutions">Notre savoir-faire</a></li>
-        <li><a href="responsibility">Nos promesses</a></li>
-        <li><a href="expertise-1">Nos certifications</a></li>
+        <li><a href="qui-sommes-nous">Qui sommes-nous ?</a></li>
+        <li><a href="secteurs-d-intervention">Secteurs d’intervention</a></li>
+        <li><a href="savoir-faire">Notre savoir-faire</a></li>
+        <li><a href="nos-promesses">Nos promesses</a></li>
+        <li><a href="certifications">Nos certifications</a></li>
         <li><a href="contact">Contact</a></li>
       </ul>
     </nav>

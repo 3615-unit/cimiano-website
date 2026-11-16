@@ -9,14 +9,16 @@ Plain HTML and CSS. No build step, no dependencies. Hosted on GitHub Pages.
 | URL | File |
 |---|---|
 | `/` | `index.html` |
-| `/company` | `company.html` |
-| `/expertise` | `expertise.html` |
-| `/solutions` | `solutions.html` |
-| `/responsibility` | `responsibility.html` |
-| `/expertise-1` | `expertise-1.html` |
+| `/qui-sommes-nous` | `qui-sommes-nous.html` |
+| `/secteurs-d-intervention` | `secteurs-d-intervention.html` |
+| `/savoir-faire` | `savoir-faire.html` |
+| `/nos-promesses` | `nos-promesses.html` |
+| `/certifications` | `certifications.html` |
 | `/contact` | `contact.html` |
 
-URLs match the old Wix site so existing Google results and links keep working.
+The old Wix addresses (`/company`, `/expertise`, `/solutions`, `/responsibility`, `/expertise-1`) are small redirect pages with the same names. Keep them so old Google results and links still land on the right page.
+
+Fonts (Instrument Serif and Inter) are served from `fonts/`, not from Google.
 
 ## Edit
 
@@ -32,7 +34,7 @@ Push to `main` and GitHub Pages publishes within a minute or two.
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000. Links without `.html` (like `/company`) only resolve on GitHub Pages, so click `company.html` locally or use the live site.
+Then open http://localhost:8000. Links without `.html` (like `/qui-sommes-nous`) only resolve on GitHub Pages, so click `qui-sommes-nous.html` locally or use the live site.
 
 ## Contact form
 
