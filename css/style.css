@@ -699,6 +699,45 @@ button.btn-arrow { cursor: pointer; font-family: inherit; }
 @media (max-width: 760px) {
   .site-footer { grid-template-columns: 1fr; gap: 24px; padding-block: 32px 24px; }
   .foot-brand img { height: 32px; margin-bottom: 10px; }
-  .foot-brand p { font-size: 0.88rem; }
-  .foot-col > a { padding: 6px 0; font-size: 1rem; }   /* easier to tap */
+  .foot-col > a { padding: 6px 0; }   /* easier to tap */
+}
+
+/* ==========================================================================
+   Type scale. Single source of truth for font sizes, from a Nov 2026 audit.
+   Two families only: Instrument Serif (titles, 400) and Inter (text, 400;
+   500 for labels, buttons and the phone number). Change sizes here, nowhere
+   else.
+   ========================================================================== */
+
+:root {
+  --fs-h1: clamp(2.8rem, 7vw, 5.6rem);      /* page titles */
+  --fs-h2: clamp(2.3rem, 4.6vw, 3.8rem);    /* section titles */
+  --fs-h3-lg: clamp(2rem, 3.4vw, 2.8rem);   /* large card titles (home sectors) */
+  --fs-h3: clamp(1.4rem, 2.2vw, 1.75rem);   /* card and list titles, menu links */
+  --fs-lead: clamp(1.1rem, 1.6vw, 1.25rem); /* intro sentence under a title */
+  --fs-body: 1rem;                          /* 16px: paragraphs, form fields */
+  --fs-small: 0.9375rem;                    /* 15px: card descriptions, footer */
+  --fs-xs: 0.8125rem;                       /* 13px: numbers, notes, copyright */
+  --fs-label: 0.75rem;                      /* 12px: small capitals */
+  --ls-label: 0.12em;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2, .cta h2 { font-size: var(--fs-h2); }
+.stack-item h3 { font-size: var(--fs-h3-lg); }
+.tile h3, .trade h3, .promises h3, .cert h3, .dark .rows h3, .menu li a { font-size: var(--fs-h3); }
+.lead { font-size: var(--fs-lead); }
+body, .muted, .page-head .intro, input, textarea { font-size: var(--fs-body); }
+.tile p, .trade p, .rows p, .promises p, .cert p,
+.foot-brand p, .site-footer address, .foot-col > a { font-size: var(--fs-small); }
+.tile .num, .trade .num, .promises .num, .rows .num, .form-note, .foot-bottom { font-size: var(--fs-xs); }
+label { font-size: 0.875rem; }
+.cta .tel { font-size: 1.125rem; font-weight: 500; }
+
+/* Every small-capitals element shares one style. */
+.eyebrow, .btn, .btn-arrow, .menu-pill, .foot-label {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
 }
