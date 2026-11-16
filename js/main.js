@@ -58,8 +58,8 @@ if (miniBar && topSection && "IntersectionObserver" in window) {
 // Fade sections in as they scroll into view.
 const revealed = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
-  // Start a little before the block reaches the screen (10% of the screen
-  // height below it), so even a fast scroll never shows an empty gap.
+  // Start the moment the block touches the bottom of the screen, so the
+  // rise and un-blur is seen without leaving an empty gap.
   // When the block is back below that zone (the visitor scrolled up past
   // it), reset it, so it plays again on the next scroll down. Blocks above
   // the screen stay visible.
@@ -68,7 +68,7 @@ if ("IntersectionObserver" in window) {
       if (entry.isIntersecting) entry.target.classList.add("in");
       else if (entry.boundingClientRect.top > 0) entry.target.classList.remove("in");
     });
-  }, { rootMargin: "0px 0px 10% 0px" });
+  }, { rootMargin: "0px 0px 0px 0px" });
   revealed.forEach((el) => io.observe(el));
 } else {
   revealed.forEach((el) => el.classList.add("in"));
